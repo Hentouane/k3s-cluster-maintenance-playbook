@@ -1,0 +1,9 @@
+- name: Update and upgrade
+  hosts: all
+  tasks:
+    - name: Run apt-get update
+      become: true
+      apt:
+        upgrade: yes
+        update_cache: yes
+        cache_valid_time: 3600
